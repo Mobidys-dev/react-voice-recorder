@@ -175,7 +175,7 @@ class Recorder extends Component {
 
   render() {
     const { recording, audios, time, medianotFound, pauseRecord } = this.state;
-    const { showUIAudio, title, audioURL, disableFullUI } = this.props;
+    const { showUIAudio, title, audioURL, disableFullUI, helptext } = this.props;
 
     if (disableFullUI) { return null; }
 
@@ -247,7 +247,7 @@ class Recorder extends Component {
                       {
                         !recording ?
                           (
-                            <p className={styles.help}>Press the microphone to record</p>
+                            <p className={styles.help}>{helptext ? helptext : "Press the microphone to record"}</p>
                           ) :
                           null
                       }
